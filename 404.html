@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | VantageScale</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { 'vs-bg': '#0A0A0F', 'vs-card': '#10101C', 'vs-slate': '#13131F', 'vs-blue': '#3B82F6', 'vs-cyan': '#06B6D4', 'vs-text': '#F1F5F9', 'vs-muted': '#94A3B8', 'vs-border': '#1E293B' }, fontFamily: { display: ['Syne','Inter','sans-serif'], body: ['Inter','sans-serif'] }, maxWidth: { content: '1200px' } } }
+    }
+  </script>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-vs-bg text-vs-text font-body antialiased min-h-screen flex flex-col">
+
+  <!-- Minimal nav -->
+  <header class="py-6 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-content mx-auto">
+      <a href="index.html" class="font-display font-bold text-xl text-vs-text">Vantage<span class="text-vs-blue">Scale</span></a>
+    </div>
+  </header>
+
+  <!-- 404 content -->
+  <main class="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 relative overflow-hidden">
+
+    <!-- Background effects -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse at 30% 40%, rgba(59,130,246,0.12) 0%, transparent 55%), radial-gradient(ellipse at 70% 60%, rgba(6,182,212,0.08) 0%, transparent 50%);"></div>
+
+    <!-- Decorative 404 number (background) -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden="true">
+      <span class="font-display font-bold text-[20rem] leading-none text-vs-text/[0.02]">404</span>
+    </div>
+
+    <div class="text-center max-w-xl relative z-10">
+
+      <!-- Error code badge -->
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-semibold mb-8">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        Error 404
+      </div>
+
+      <h1 class="font-display text-[clamp(2rem,5vw,3rem)] font-bold text-vs-text mb-4 leading-tight">
+        This Page Doesn't Exist.<br>
+        But Your Revenue Problem Does.
+      </h1>
+
+      <p class="text-vs-muted text-lg leading-relaxed mb-10">
+        Looks like that URL went missing. While you're here — if your business has a conversion or automation challenge, let's talk about it.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a href="index.html" class="inline-flex items-center gap-2 px-7 py-3.5 border border-vs-border hover:border-vs-blue/50 text-vs-text hover:text-vs-blue rounded-xl transition-all duration-200 font-semibold cursor-pointer text-sm">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          Back to Home
+        </a>
+        <a href="book-a-call.html" class="inline-flex items-center gap-2 px-7 py-3.5 bg-vs-blue hover:bg-blue-500 text-white rounded-xl transition-all duration-200 font-semibold cursor-pointer text-sm" style="box-shadow: 0 4px 20px rgba(59,130,246,0.25);">
+          Book a Free Call
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Quick links -->
+      <div class="border-t border-vs-border pt-8">
+        <p class="text-vs-muted text-xs mb-4 uppercase tracking-widest font-medium">Or explore</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="services/ai-agents-and-automation.html" class="px-3 py-1.5 bg-vs-card border border-vs-border rounded-lg text-vs-muted hover:text-vs-text hover:border-vs-blue/30 text-xs transition-all duration-200 cursor-pointer">AI Agents</a>
+          <a href="services/voice-agents-and-ai-receptionists.html" class="px-3 py-1.5 bg-vs-card border border-vs-border rounded-lg text-vs-muted hover:text-vs-text hover:border-vs-blue/30 text-xs transition-all duration-200 cursor-pointer">Voice Agents</a>
+          <a href="services/sales-funnel-diagnosis-and-optimisation.html" class="px-3 py-1.5 bg-vs-card border border-vs-border rounded-lg text-vs-muted hover:text-vs-text hover:border-vs-blue/30 text-xs transition-all duration-200 cursor-pointer">Sales Funnel</a>
+          <a href="services/lead-generation-systems.html" class="px-3 py-1.5 bg-vs-card border border-vs-border rounded-lg text-vs-muted hover:text-vs-text hover:border-vs-blue/30 text-xs transition-all duration-200 cursor-pointer">Lead Generation</a>
+          <a href="results.html" class="px-3 py-1.5 bg-vs-card border border-vs-border rounded-lg text-vs-muted hover:text-vs-text hover:border-vs-blue/30 text-xs transition-all duration-200 cursor-pointer">Results</a>
+          <a href="contact.html" class="px-3 py-1.5 bg-vs-card border border-vs-border rounded-lg text-vs-muted hover:text-vs-text hover:border-vs-blue/30 text-xs transition-all duration-200 cursor-pointer">Contact</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Minimal footer -->
+  <footer class="py-6 px-4 sm:px-6 lg:px-8 border-t border-vs-border">
+    <div class="max-w-content mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-vs-muted text-xs">© 2025 VantageScale. All rights reserved.</p>
+      <div class="flex gap-5">
+        <a href="privacy-policy.html" class="text-vs-muted hover:text-vs-text text-xs transition-colors">Privacy Policy</a>
+        <a href="terms-of-service.html" class="text-vs-muted hover:text-vs-text text-xs transition-colors">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+/* ============================================================
+   VantageScale – Custom Styles
+   Tailwind handles utilities; this file handles animations,
+   glassmorphism, gradient mesh, and scroll-driven effects.
+   ============================================================ */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --vs-bg:      #0A0A0F;
+  --vs-card:    #10101C;
+  --vs-slate:   #13131F;
+  --vs-blue:    #3B82F6;
+  --vs-cyan:    #06B6D4;
+  --vs-text:    #F1F5F9;
+  --vs-muted:   #94A3B8;
+  --vs-border:  #1E293B;
+  --vs-green:   #10B981;
+  --vs-amber:   #F59E0B;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--vs-bg);
+  color: var(--vs-text);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Typography ---------- */
+.font-display { font-family: 'Syne', 'Inter', sans-serif; }
+
+
+/* ---------- Hero Gradient Mesh ---------- */
+.hero-mesh {
+  background:
+    radial-gradient(ellipse at 15% 40%, rgba(59, 130, 246, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 15%, rgba(6, 182, 212, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 85%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+  animation: meshPulse 10s ease-in-out infinite;
+}
+
+@keyframes meshPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.03) translateY(-10px);
+  }
+}
+
+/* ---------- CTA Section Background ---------- */
+.cta-gradient {
+  background:
+    radial-gradient(ellipse at 50% -20%, rgba(59, 130, 246, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse at 0% 120%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 120%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+}
+
+/* ---------- Glassmorphism ---------- */
+.glass-card {
+  background: rgba(16, 16, 28, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 130, 246, 0.12);
+}
+
+.glass-cta-bar {
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--vs-border);
+}
+
+/* ---------- Sticky Navbar ---------- */
+#navbar { transition: background 0.3s ease, border-color 0.3s ease; }
+
+#navbar.scrolled {
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--vs-border);
+}
+
+/* ---------- Mobile Hamburger → X ---------- */
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--vs-text);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+#hamburger.is-open .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#hamburger.is-open .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+#hamburger.is-open .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---------- FAQ Accordion ---------- */
+details summary { list-style: none; }
+details summary::-webkit-details-marker { display: none; }
+
+details .accordion-icon {
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+details[open] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+details .accordion-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding-top: 0;
+}
+details[open] .accordion-body {
+  max-height: 500px;
+  padding-top: 12px;
+}
+
+/* ---------- Gradient Divider ---------- */
+.gradient-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--vs-blue), transparent);
+  border: none;
+  margin: 0;
+}
+
+/* ---------- Scroll Animations (AOS supplement) ---------- */
+[data-aos] { will-change: transform, opacity; }
+
+/* ---------- Card Hover Glow ---------- */
+.card-hover {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- Button Lift ---------- */
+.btn-primary {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.35);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ---------- Service Card Mobile Scroll ---------- */
+@media (max-width: 639px) {
+  .services-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .services-scroll::-webkit-scrollbar { display: none; }
+  .services-scroll .service-card {
+    min-width: 280px;
+    flex-shrink: 0;
+  }
+}
+
+/* ---------- Metric Highlight ---------- */
+.metric-number {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* ---------- Blog Card ---------- */
+.blog-card {
+  transition: border-color 0.3s ease, transform 0.25s ease;
+}
+.blog-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* ---------- Focus Styles (Accessibility) ---------- */
+:focus-visible {
+  outline: 2px solid var(--vs-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: var(--vs-text);
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--vs-bg); }
+::-webkit-scrollbar-thumb { background: var(--vs-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--vs-muted); }
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
